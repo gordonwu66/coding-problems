@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 
 public class Queue<T> {
 	
@@ -13,12 +14,37 @@ public class Queue<T> {
 	private QueueNode<T> first;
 	private QueueNode<T> last;
 	
-	// add(item)
+	public void add(T item) {
+		QueueNode<T> t = new QueueNode<T>(item);
+		if(last != null) {
+			last.next = t;
+		}
+		last = t;
+		if (first == null) {
+			first = last;
+		}
+	}
 	
-	// remove()
+	public T remove() {
+		if (first == null) {
+			throw new NoSuchElementException();
+		}
+		T data = first.data;
+		first = first.next;
+		if (first == null) {
+			last = null;
+		}
+		return data;
+	}
 	
-	// peek()
+	public T peek() {
+		if (first == null) {
+			throw new NoSuchElementException();
+		}
+		return first.data;
+	}
 	
-	// isEmpty()
-
+	public boolean isEmpty() {
+		return first == null;
+	}
 }
