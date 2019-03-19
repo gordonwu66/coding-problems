@@ -1,5 +1,6 @@
 /* Given an NxN matrix, write a method to rotate the image by 90 degrees. Can
  * this be done in place? */
+
 public class RotateMatrix {
 	
 	public static int[][] rotateMatrix(int[][] matrix) {

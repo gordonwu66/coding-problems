@@ -1,4 +1,5 @@
 /* Returns a reversed string */
+
 public class ReverseString {
 	
 	public static String reverseString(String str) {
